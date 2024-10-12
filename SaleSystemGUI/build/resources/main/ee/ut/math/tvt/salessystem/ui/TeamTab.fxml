@@ -10,19 +10,19 @@
             <!-- Team Info Labels and Values-->
             <GridPane hgap="30" vgap="10">
                 <!-- Team Name -->
-                <Label text="Team name:" style="-fx-font-family: 'Helvetica'; -fx-font-size: 12px; -fx-font-weight: normal;"/>
+                <Label text="Team name" style="-fx-font-family: 'Helvetica'; -fx-font-size: 12px; -fx-font-weight: bold;"/>
                 <Label fx:id="teamName" GridPane.columnIndex="1" style="-fx-font-family: 'Helvetica'; -fx-font-size: 12px; -fx-font-weight: normal;"/>
 
                 <!-- Team Leader -->
-                <Label text="Team leader:" GridPane.rowIndex="1" style="-fx-font-family: 'Helvetica'; -fx-font-size: 12px; -fx-font-weight: normal;"/>
+                <Label text="Team leader" GridPane.rowIndex="1" style="-fx-font-family: 'Helvetica'; -fx-font-size: 12px; -fx-font-weight: bold;"/>
                 <Label fx:id="contactPersonLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" style="-fx-font-family: 'Helvetica'; -fx-font-size: 12px; -fx-font-weight: normal;"/>
 
                 <!-- Team Leader Email -->
-                <Label text="Team leader email:" GridPane.rowIndex="2" style="-fx-font-family: 'Helvetica'; -fx-font-size: 12px; -fx-font-weight: normal;"/>
+                <Label text="Team leader email" GridPane.rowIndex="2" style="-fx-font-family: 'Helvetica'; -fx-font-size: 12px; -fx-font-weight: bold;"/>
                 <Label fx:id="contactPersonEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" style="-fx-font-family: 'Helvetica'; -fx-font-size: 12px; -fx-font-weight: normal;"/>
 
                 <!-- Team Members -->
-                <Label text="Team members:" GridPane.rowIndex="3" style="-fx-font-family: 'Helvetica'; -fx-font-size: 12px; -fx-font-weight: normal;"/>
+                <Label text="Team members" GridPane.rowIndex="3" style="-fx-font-family: 'Helvetica'; -fx-font-size: 12px; -fx-font-weight: bold;"/>
                 <Label fx:id="teamMembers" GridPane.columnIndex="1" GridPane.rowIndex="3" style="-fx-font-family: 'Helvetica'; -fx-font-size: 12px; -fx-font-weight: normal;"/>
             </GridPane>
 
