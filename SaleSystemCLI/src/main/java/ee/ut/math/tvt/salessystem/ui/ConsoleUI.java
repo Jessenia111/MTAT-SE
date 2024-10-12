@@ -11,9 +11,11 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Properties;
 
 /**
  * A simple CLI (limited functionality).
@@ -73,6 +75,26 @@ public class ConsoleUI {
         }
         System.out.println("-------------------------");
     }
+    private void showTeamInfo(){
+
+        Properties teamProperties = new Properties();
+        try {
+            InputStream inputStream = ConsoleUI.class.getResourceAsStream("/application.properties");
+            if (inputStream != null) {
+                teamProperties.load(inputStream);
+                inputStream.close();
+            }
+            System.out.println("-------------------------");
+            // Print the team information
+            System.out.println("Team name: " + teamProperties.getProperty("team.name", "Unknown Team"));
+            System.out.println("Team leader: " + teamProperties.getProperty("team.contactPerson", "Unknown"));
+            System.out.println("Team leader email: " + teamProperties.getProperty("team.contactEmail", "Unknown"));
+            System.out.println("Team members: " + teamProperties.getProperty("team.members", "No members"));
+            System.out.println("-------------------------");
+        } catch (IOException e) {
+            throw new SalesSystemException("Could not load team properties", e);
+        }
+    }
 
     private void printUsage() {
         System.out.println("-------------------------");
@@ -82,6 +104,7 @@ public class ConsoleUI {
         System.out.println("c\t\tShow cart contents");
         System.out.println("a IDX NR \tAdd NR of stock item with index IDX to the cart");
         System.out.println("p\t\tPurchase the shopping cart");
+        System.out.println("t\t\tShow team info");
         System.out.println("r\t\tReset the shopping cart");
         System.out.println("-------------------------");
     }
@@ -114,7 +137,10 @@ public class ConsoleUI {
             } catch (SalesSystemException | NoSuchElementException e) {
                 log.error(e.getMessage(), e);
             }
-        } else {
+        } else if(c[0].equals("t")){
+            showTeamInfo();
+        }
+        else {
             System.out.println("unknown command");
         }
     }
