@@ -6,6 +6,7 @@ import ee.ut.math.tvt.salessystem.ui.controllers.PurchaseController;
 import ee.ut.math.tvt.salessystem.ui.controllers.StockController;
 import ee.ut.math.tvt.salessystem.logic.ShoppingCart;
 
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
