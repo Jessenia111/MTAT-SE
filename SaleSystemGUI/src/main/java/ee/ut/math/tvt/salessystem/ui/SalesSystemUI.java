@@ -74,6 +74,9 @@ public class SalesSystemUI extends Application {
         borderPane.setCenter(new TabPane(purchaseTab, stockTab, historyTab, teamTab));
         root.getChildren().add(borderPane);
 
+        scene.getStylesheets().add(getClass().getResource("DefaultTheme.css").toExternalForm());
+
+
         primaryStage.setTitle("Sales system");
         primaryStage.setScene(scene);
         primaryStage.show();
